@@ -1,0 +1,1 @@
+/home/berton/.config/shell/profile
