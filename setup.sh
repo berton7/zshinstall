@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-sudo pacman -Syu zsh --needed
-[ ! -d "ttf-meslo-nerd-font-powerlevel10k" ] && git clone https://aur.archlinux.org/ttf-meslo-nerd-font-powerlevel10k.git --depth 1 && cd ttf-meslo-nerd-font-powerlevel10k && makepkg -si && cd ..
+set -e
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install zsh
 mkdir -p "$HOME/.config/zsh"
 [ ! -d "$HOME/.config/zsh/.oh-my-zsh" ] && ZSH="$HOME/.config/zsh/.oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 [ ! -d "$HOME/.config/zsh/.oh-my-zsh/custom/themes/powerlevel10k" ] && git clone https://github.com/romkatv/powerlevel10k.git "$HOME/.config/zsh/.oh-my-zsh/custom/themes/powerlevel10k" --depth 1
